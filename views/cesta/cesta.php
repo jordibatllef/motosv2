@@ -42,7 +42,7 @@ if (isset($_SESSION['cesta']) && count($_SESSION['cesta']) > 0) {
     <?php
 } else {
     ?>
-    <p>Su cesta está vacía</p>
+    <p>Su cesta está vacia</p>
     <?php
 }
 ?>
