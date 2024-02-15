@@ -1,15 +1,21 @@
 <?php
 
-include_once 'model/ArticuloDAO.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+//include_once 'model/ArticuloDAO.php';
 
 class ArticuloController{
 
 
     public function list(){
+   
         $listaarticulos = ArticuloDAO::getAllArticulos();
         $view = 'views/articulos/listado.php';
         include_once 'views/main.php';
-    }
+        
+     }
 
     public function add(){
         $nombre = $_POST['nombre'];

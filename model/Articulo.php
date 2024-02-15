@@ -2,12 +2,7 @@
 
 class Articulo
 {
-    private $id_articulos;
-    private $nombre;
-    private $precio;
-    private $descripcion;
-    private $idcategoria;
-    public $img;
+
 
     public function __construct(){    
     }

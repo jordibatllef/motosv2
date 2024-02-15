@@ -10,7 +10,7 @@ class ArticuloDAO
     {
         $con = Database::connect();
 
-        $stmt = $con->prepare("SELECT * FROM ARTICULOS");
+        $stmt = $con->prepare("SELECT * FROM articulos");
         $stmt->execute();
         $result = $stmt->get_result();
 

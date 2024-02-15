@@ -46,7 +46,7 @@
     </div>
 
     <div class="header-buttons">
-        <a href="views/usuario/iniciar_sesion.php">Iniciar Sesión</a>
+        <a href="?controller=User&action=login">Iniciar Sesión</a>
         <a href="ver_cesta.php">Ver Cesta</a>
     </div>
 </header>

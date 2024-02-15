@@ -81,6 +81,103 @@ footer {
     text-align: center;
 }
 
+.iniciarsesion {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.iniciarsesion h1 {
+    text-align: center;
+}
+
+.iniciarsesion form {
+    display: flex;
+    flex-direction: column;
+}
+
+.iniciarsesion label {
+    margin-bottom: 8px;
+}
+
+.iniciarsesion input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.iniciarsesion input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.iniciarsesion input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.iniciarsesion p {
+    color: #ff0000;
+    margin-bottom: 16px;
+}
+
+.buttongoogle{
+
+    
+    
+    
+    background-image: url(https://expresswriters.com/wp-content/uploads/2015/09/google-new-logo-450x450.jpg);
+    height: 100px;
+    width: auto;
+    background-repeat: no-repeat;
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonfacebook{
+
+    
+    
+    
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/480px-Facebook_Logo_%282019%29.png);
+    height: 100px;
+    width: auto;
+    background-repeat: no-repeat;
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonapple{
+
+    
+    
+    
+    background-image: url(https://banner2.cleanpng.com/20171218/f41/apple-logo-png-5a37e212dfda18.3311147015136117949169.jpg);
+    height: 100px;
+    width: auto;
+    background-repeat: no-repeat;
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 
 
