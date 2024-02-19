@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p><?php echo $mensaje_error; ?></p>
     <?php endif; ?>
 
-    <form method="post" action="iniciar_sesion.php">
+    <form class="iniciosesion" method="post" action="iniciar_sesion.php">
         <label for="usuario">Usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
 
