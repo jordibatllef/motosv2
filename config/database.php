@@ -19,7 +19,7 @@
 
 class Database{
 
-    public static function connect($host='localhost',$user='root',$pwd='',$db='motos'){
+    public static function connect($host='localhost',$user='root',$pwd='',$db='motosjb'){
         $con = new mysqli($host,$user,$pwd,$db);
 
         if($con == false){
