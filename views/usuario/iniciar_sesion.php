@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -37,6 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" id="contrasena" name="contrasena" required>
 
         <input type="submit" value="Iniciar Sesión">
+
+        <!-- Botones de inicio de sesión social -->
+        <a href="auth_google.php" class="buttongoogle"></a>
+        <a href="auth_facebook.php" class="buttonfacebook"></a>
+        <a href="auth_apple.php" class="buttonapple"></a>
     </form>
 </body>
 </html>
+

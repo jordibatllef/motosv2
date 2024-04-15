@@ -81,14 +81,64 @@ footer {
     text-align: center;
 }
 
+
+
 .iniciosesion {
-    max-width: 400px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: palegreen;
+    border-radius: 10px;
+    background-color: rgba(119, 255, 142, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
+
+.iniciosesion h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.iniciosesion input[type="text"],
+.iniciosesion input[type="password"],
+.iniciosesion input[type="submit"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.iniciosesion input[type="text"],
+.iniciosesion input[type="password"] {
+    border: 1px solid #ccc;
+}
+
+.iniciosesion input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.iniciosesion input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .iniciarsesion h1 {
     text-align: center;
@@ -125,60 +175,60 @@ footer {
     margin-bottom: 16px;
 }
 
-.buttongoogle{
-
-    
-    
-    
-    background-image: url(https://expresswriters.com/wp-content/uploads/2015/09/google-new-logo-450x450.jpg);
-    height: 100px;
-    width: auto;
-    background-repeat: no-repeat;
-    display: block; 
-    margin: 0 auto; 
-    border-radius: 5px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+.buttongoogle {
+    height: 90px;
+    width: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    background-image: url(https://www.keyweo.com/wp-content/uploads/2022/03/el-logo-g-de-google.png);
+    background-size: cover; /* Para cubrir completamente el área del botón */
+    background-position: center; /* Para centrar la imagen */
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 20px; /* Espacio entre los botones */
 }
-.buttonfacebook{
 
-    
-    
-    
+
+.buttonfacebook {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/480px-Facebook_Logo_%282019%29.png);
-    height: 100px;
-    width: auto;
+    background-size: cover; /* Para cubrir completamente el área del botón */
+    background-position: center; /* Para centrar la imagen */
     background-repeat: no-repeat;
-    display: block; 
-    margin: 0 auto; 
-    border-radius: 5px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.buttonapple{
-
-    
-    
-    
-    background-image: url(https://banner2.cleanpng.com/20171218/f41/apple-logo-png-5a37e212dfda18.3311147015136117949169.jpg);
-    height: 100px;
-    width: auto;
-    background-repeat: no-repeat;
-    display: block; 
-    margin: 0 auto; 
-    border-radius: 5px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    margin-right: 20px; /* Espacio entre los botones */
 }
 
 
 
 
 
+    .buttonapple{
+        height: 90px;
+        width: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        background-image: url(https://www.brandemia.org/wp-content/uploads/2011/10/logo_actualidad_apple.jpg);
+        background-size: cover; /* Para cubrir completamente el área del botón */
+        background-position: center; /* Para centrar la imagen */
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin-right: 30px; 
+    }
 
+    
