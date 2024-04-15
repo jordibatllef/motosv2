@@ -12,6 +12,7 @@
 
 <body>
     <?php include_once 'views/header.php'; ?>
+    <h1>hola</h1>
     <?php include_once $view; ?>
     <?php include_once 'views/footer.php'; ?>
 </body>
