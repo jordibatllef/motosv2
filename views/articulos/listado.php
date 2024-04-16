@@ -1,4 +1,3 @@
-<img src="img/dakar.jpg" alt="Dakar Image" style="width: 100%; height: auto; max-width: 100%;">
 
 <div class='container'>   
 <a href="?controller=Articulo&action=edit">Crear Articulo</a>

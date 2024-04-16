@@ -72,33 +72,46 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+    background-image: url(https://w.forfun.com/fetch/ac/ac191adf1fc77369073e6733e6a5ba42.jpeg);
+
 }
+
 
 footer {
-    background-color: #333;
+    width: 800px;
     color: #fff;
-    padding: 15px;
+    padding: 23px;
     text-align: center;
-}
-
-
+    margin-top: 150px;
+    margin-left: 650px;
+    border-radius: 10px;
+    background: linear-gradient(
+        217deg,
+        rgba(128, 52, 52, 0.8),
+        rgba(32, 31, 129, 0) 70.71%
+      ), linear-gradient(127deg, rgba(148, 132, 87, 0.8), rgba(31, 172, 31, 0) 70.71%),
+      linear-gradient(336deg, rgba(155, 140, 55, 0.26), rgba(0, 0, 255, 0) 70.71%);
+    }
 
 .iniciosesion {
     text-align: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 1000px;
     margin: 0 auto;
+    margin-top: 50px;
     padding: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 10px;
-    background-color: rgba(119, 255, 142, 0.9);
+    background-color: #008cffe6;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
+
 }
 
 .iniciosesion h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #000000;
 }
 
 .iniciosesion input[type="text"],
@@ -111,68 +124,14 @@ footer {
     font-size: 16px;
 }
 
-.iniciosesion input[type="text"],
-.iniciosesion input[type="password"] {
-    border: 1px solid #ccc;
-}
+
 
 .iniciosesion input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #164294;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.iniciosesion input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.iniciarsesion h1 {
-    text-align: center;
-}
-
-.iniciarsesion form {
-    display: flex;
-    flex-direction: column;
-}
-
-.iniciarsesion label {
-    margin-bottom: 8px;
-}
-
-.iniciarsesion input {
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.iniciarsesion input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-}
-
-.iniciarsesion input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-.iniciarsesion p {
-    color: #ff0000;
-    margin-bottom: 16px;
 }
 
 .buttongoogle {
@@ -197,6 +156,7 @@ footer {
     height: 90px;
     width: 90px;
     display: flex;
+    color: white;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
@@ -223,7 +183,7 @@ footer {
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin: 0 auto;
-        background-image: url(https://www.brandemia.org/wp-content/uploads/2011/10/logo_actualidad_apple.jpg);
+        background-image: url(https://cdn.freebiesupply.com/images/large/2x/apple-logo-transparent.png);
         background-size: cover; /* Para cubrir completamente el área del botón */
         background-position: center; /* Para centrar la imagen */
         background-repeat: no-repeat;
@@ -231,4 +191,26 @@ footer {
         margin-right: 30px; 
     }
 
-    
+    .mi-clase {
+        background-image: url(https://static.vecteezy.com/system/resources/previews/007/718/306/non_2x/black-and-white-checkered-flag-background-free-vector.jpg);
+        color: orange;
+        width: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 13vh;
+        margin-left: 555px;
+        font-family: Arial, sans-serif;
+        font-size:500%;
+        text-align: center;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 40px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+
+    }

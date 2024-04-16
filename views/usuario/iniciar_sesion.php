@@ -14,16 +14,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="home">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Iniciar Sesión</h1>
-
+<h1 class="mi-clase">Iniciar Sesión</h1>
+    
     <?php if (isset($mensaje_error)) : ?>
         <p><?php echo $mensaje_error; ?></p>
     <?php endif; ?>
@@ -43,5 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="auth_apple.php" class="buttonapple"></a>
     </form>
 </body>
+ 
+
 </html>
 
