@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php endif; ?>
 
     <form class="iniciosesion" method="post" action="iniciar_sesion.php">
-        <label for="usuario">Usuario:</label>
+        <label for="usuario">USUARIO:</label>
         <input type="text" id="usuario" name="usuario" required>
 
-        <label for="contrasena">Contraseña:</label>
+        <label for="contrasena">CONTRASEÑA:</label>
         <input type="password" id="contrasena" name="contrasena" required>
 
         <input type="submit" value="Iniciar Sesión">

@@ -100,12 +100,15 @@ footer {
     max-width: 1000px;
     margin: 0 auto;
     margin-top: 50px;
+    color: orangered;
+    font-size: 150%;
     padding: 40px;
     border: 1px solid #000000;
     border-radius: 10px;
     background-color: #008cffe6;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/007/718/306/non_2x/black-and-white-checkered-flag-background-free-vector.jpg);
 
 }
 
@@ -192,8 +195,14 @@ footer {
     }
 
     .mi-clase {
-        background-image: url(https://static.vecteezy.com/system/resources/previews/007/718/306/non_2x/black-and-white-checkered-flag-background-free-vector.jpg);
-        color: orange;
+        background: linear-gradient(
+        217deg,
+        rgba(168, 59, 59, 0.8),
+        rgba(207, 137, 6, 0) 70.71%
+      ), linear-gradient(127deg, rgba(148, 132, 87, 0.8), rgba(31, 172, 31, 0) 70.71%),
+      linear-gradient(336deg, rgba(155, 140, 55, 0.26), rgba(0, 0, 255, 0) 70.71%);
+    
+        color: rgb(34, 32, 30);
         width: 1000px;
         display: flex;
         justify-content: center;
@@ -206,6 +215,7 @@ footer {
         width: 100%;
         max-width: 1000px;
         margin: 0 auto;
+        background-color: #362727;
         margin-top: 50px;
         padding: 40px;
         border: 1px solid #000000;
