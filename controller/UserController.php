@@ -29,6 +29,6 @@ class UserController {
         }
 
         $view = 'views/usuario/iniciar_sesion.php';
-        include_once 'views/main.php';    
+        include_once 'views/maininiciarsesion.php';    
     }
 }

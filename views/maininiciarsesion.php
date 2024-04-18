@@ -10,8 +10,8 @@
     <link href="<?=url?>css/style.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="fondodepantalla">
+<body >
+    <div class="fondoiniciar" >
     <?php include_once 'views/header.php'; ?>
 
     <?php include_once $view; ?>
