@@ -105,7 +105,7 @@ footer {
     margin: 0 auto;
     margin-top: 50px;
     
-    color: orangered;
+    color: rgb(43, 255, 0);
     font-size: 150%;
     padding: 40px;
     border: 1px solid #000000;
@@ -198,7 +198,7 @@ footer {
         background-image /*fondo pantalla iniciar sesion login*/: url(https://w.forfun.com/fetch/ac/ac191adf1fc77369073e6733e6a5ba42.jpeg);
         background-size: cover;
         
-        color: rgb(255, 81, 0);
+        color: rgb(21, 255, 0);
         width: 1000px;
         display: flex;
         justify-content: center;
@@ -228,7 +228,7 @@ footer {
         background-size: auto;
     }
 .fondoiniciar /*fondo pantalla login*/{
-    background-image: url(https://wallpapercave.com/wp/wp3966625.jpg);
+    background-image: url(https://www.1zoom.me/big2/633/299835-alexfas01.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     }
