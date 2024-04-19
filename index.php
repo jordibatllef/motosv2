@@ -10,6 +10,8 @@ include_once 'config/parameters.php';
 include_once 'controller/ArticuloController.php';
 include_once 'controller/DashboardController.php';
 include_once 'controller/UserController.php';
+include_once 'controller/ComprasController.php';
+
 
 if(!isset($_GET['controller'])){
     header("Location:".url."?controller=Articulo");

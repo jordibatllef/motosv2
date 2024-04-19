@@ -14,7 +14,8 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?= $articulo->getNombre() ?></h5>
                                 <p class="card-text"><?= $articulo->getDescripcion() ?></p>
-                                <a href="?controller=Articulo&action=detail" class="btn btn-primary">Conocer más</a>
+                                <a><?= $articulo->getPrecio() ?></a>
+                                <a href="#" class="btn btn-primary"> Añadir al carrito</a>
                             </div>
                         </div>
                     </div>

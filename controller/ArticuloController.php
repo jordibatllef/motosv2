@@ -45,5 +45,8 @@ class ArticuloController{
     public function detail(){
         echo '<h1>Datos Articulo</h1>';
     }
+    public function nada(){
+        echo '<h1>Datos Articulo</h1>';
+    }
 
 }
