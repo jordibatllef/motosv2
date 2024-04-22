@@ -42,11 +42,7 @@
     <div>
         <img id="logo" src="img/logo.jpg" alt="Logo">
     </div>
-
-    <div id="search-bar">
-        <input type="text" placeholder="Buscar productos...">
-        <button type="button">Buscar</button>
-    </div>
+   
 
     <div class="header-buttons">
         <a href="?controller=User&action=login">Iniciar Sesión</a>

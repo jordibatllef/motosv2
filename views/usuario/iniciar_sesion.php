@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <form class="iniciosesion" method="post" action="iniciar_sesion.php">
     <label for="usuario">USUARIO:</label>
-    <input type="text" id="usuario" name="usuario" required>
+    <input type="text" placeholder="Usuario..." id="usuario" name="usuario" required>
 
     <label for="contrasena">CONTRASEÑA:</label>
-    <input type="password" id="contrasena" name="contrasena" required>
+    <input type="password" placeholder="Contraseña..." id="contrasena" name="contrasena" required>
 
     <input type="submit" value="Iniciar Sesión">
 

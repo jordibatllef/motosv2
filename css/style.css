@@ -130,8 +130,8 @@ footer {
 
 
 .iniciosesion input[type="submit"] {
-    background-color: #164294;
-    color: white;
+    background-color:rgb(38, 255, 0);
+    color: black;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
