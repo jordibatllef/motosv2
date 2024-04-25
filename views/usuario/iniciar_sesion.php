@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($_POST['usuario'] == $usuario_valido && $_POST['contrasena'] == $contrasena_valida) {
         $_SESSION['usuario'] = $_POST['usuario'];
-        header('Location: pagina_venta_motos.php');
         exit();
     } else {
         $mensaje_error = 'Credenciales incorrectas';
