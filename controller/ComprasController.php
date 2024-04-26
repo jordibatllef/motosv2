@@ -9,8 +9,9 @@ class ComprasController{
         
         //$listaarticulos = ArticuloDAO::getAllArticulos();
         //$listaarticulos = [];
+     
         $view = 'views/cesta/ver_cesta.php';
-        //include_once 'views/admin/dashboard.php';
+        include_once 'views/main.php';
         
     }
 

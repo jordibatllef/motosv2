@@ -94,7 +94,7 @@ footer {
       
       linear-gradient(336deg, rgba(155, 140, 55, 0.26), rgba(0, 0, 255, 0) 70.71%);
     background-image /*fondo pantalla footer*/: url(https://w.forfun.com/fetch/ac/ac191adf1fc77369073e6733e6a5ba42.jpeg);
-
+    
     }
 
 
@@ -232,3 +232,11 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     }
+
+
+    /* Estilos para la clase cesta */
+.cesta {
+    background-color: #000000;
+}
+
+

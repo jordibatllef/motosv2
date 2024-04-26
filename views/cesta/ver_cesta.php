@@ -1,3 +1,5 @@
+
+
 <?php
 if (isset($message)) {
     ?>
@@ -45,4 +47,6 @@ if (isset($_SESSION['cesta']) && count($_SESSION['cesta']) > 0) {
     <p>Su cesta está vacia</p>
     <?php
 }
+
+
 ?>
