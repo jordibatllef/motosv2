@@ -39,10 +39,11 @@
 </nav>
 
 <header>
-    <div>
-        <img id="logo" src="img/logo.jpg" alt="Logo">
+<div>
+        <a href="http://localhost/motos/?controller=Articulo">
+            <img id="logo" src="img/logo.jpg" alt="Logo">
+        </a>
     </div>
-   
 
     <div class="header-buttons">
         <a href="?controller=User&action=login">Iniciar Sesión</a>

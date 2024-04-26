@@ -1,17 +1,6 @@
-<?php
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario_valido = 'usuario';
-    $contrasena_valida = 'contrasena';
-
-    if ($_POST['usuario'] == $usuario_valido && $_POST['contrasena'] == $contrasena_valida) {
-        $_SESSION['usuario'] = $_POST['usuario'];
-        exit();
-    } else {
-        $mensaje_error = 'Credenciales incorrectas';
-    }
-}
-?>
+<form method="post">
+    
+</form>
 
 <h1 class="mi-clase">Iniciar Sesión</h1>
     
@@ -19,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p><?php echo $mensaje_error; ?></p>
 <?php endif; ?>
 
-<form class="iniciosesion" method="post" action="iniciar_sesion.php">
+<form class="iniciosesion" method="post"  action="?controller=Usuario&action=login" >
     <label for="usuario">USUARIO:</label>
     <input type="text" placeholder="Usuario..." id="usuario" name="usuario" required>
 

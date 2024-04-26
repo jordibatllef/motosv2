@@ -9,7 +9,7 @@
     <div>
         <h3>Enlaces Rápidos</h3>
         <ul>
-        <a href="#">Inicio</a>
+        <a href="http://localhost/motos/?controller=Articulo">Inicio</a>
             <a href="#">Catálogo de Motos</a>
             <a href="#">Contacto</a>
         </ul>

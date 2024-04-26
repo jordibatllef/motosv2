@@ -1,8 +1,9 @@
 
 <div class='container'>   
     <a href="?controller=Articulo&action=edit">Crear Articulo</a>
-    <a href="?controller=Articulo&action=tienda">tienda</a>
+    <a href="?controller=Compras&action=list">Cesta</a>
  
+    
 
             <div class="row g-3">
                 <?php

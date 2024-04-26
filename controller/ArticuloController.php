@@ -32,7 +32,7 @@ class ArticuloController{
     }
 
     public function edit(){
-        echo '<h1>Editar Articulo</h1>';
+        echo '<h1>Crear Articulo</h1>';
     }
 
     public function delete(){
