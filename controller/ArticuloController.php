@@ -15,7 +15,7 @@ class ArticuloController{
         $view = 'views/articulos/listado.php';
         include_once 'views/main.php';
 
-        //Test
+    
         
      }
 
