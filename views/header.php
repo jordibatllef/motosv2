@@ -47,6 +47,7 @@
 
     <div class="header-buttons">
         <a href="?controller=User&action=login">Iniciar Sesión</a>
+        <a href="?controller=usuario&action=register">Registrate</a>
         <a href="?controller=Compras&action=list">Ver Cesta</a>
     </div>
 </header>

@@ -11,6 +11,7 @@ include_once 'controller/ArticuloController.php';
 include_once 'controller/DashboardController.php';
 include_once 'controller/UserController.php';
 include_once 'controller/ComprasController.php';
+include_once 'controller/UsuarioController.php';
 
 
 if(!isset($_GET['controller'])){

@@ -13,6 +13,13 @@ class UsuarioController {
       
     }
     
+
+    //funcion agregar usuario
+    public function register(){
+        $view = 'views/usuario/addNewUser.php';
+        include_once 'views/main.php';
+    }
+
     //funcion agregar usuario
     public function add(){
         $nombre=$_POST['nombre'];
