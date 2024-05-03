@@ -50,7 +50,7 @@ class UsuarioController {
     
     //funcion dirige al area login
     public function login(){
-        include_once 'views/login/areaLogin.php';
+        include_once 'views/usuario/areaLogin.php';
     }
     
     //funcion verifica login

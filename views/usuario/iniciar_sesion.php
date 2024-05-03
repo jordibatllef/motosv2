@@ -9,12 +9,7 @@
 <?php endif; ?>
 
 <form class="iniciosesion" method="post"  action="?controller=Usuario&action=login" >
-    <label for="usuario">USUARIO:</label>
-    <input type="text" placeholder="Usuario..." id="usuario" name="usuario" required>
-
-    <label for="contrasena">CONTRASEÑA:</label>
-    <input type="password" placeholder="Contraseña..." id="contrasena" name="contrasena" required>
-
+   
     <input type="submit" value="Iniciar Sesión">
 
     <!-- Botones de inicio de sesión social -->
@@ -23,3 +18,10 @@
     <a href="auth_apple.php" class="buttonapple"></a>
 </form>
 
+
+  <!-- aixo va dintre la clase inicio sesion de mes adalt
+    <label for="usuario">USUARIO:</label>
+    <input type="text" placeholder="Usuario..." id="usuario" name="usuario" required>
+
+    <label for="contrasena">CONTRASEÑA:</label>
+    <input type="password" placeholder="Contraseña..." id="contrasena" name="contrasena" required> -->

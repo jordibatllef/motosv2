@@ -53,6 +53,6 @@
 </header>
 
 <div class="alert alert-warning alert-dismissible fade show Envios" role="alert">
-  <strong>Envios GRATIS > 5000€</strong> - Cambios y Reparaciones GRATIS la primera vez!
+  <strong>EN STOCK</strong> Por tiempo limitado tenemos las siguientes motos aprovecha y ven!
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>

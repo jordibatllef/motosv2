@@ -52,6 +52,7 @@
                 <label for="rol">Rol:</label>
                 <select id="rol" name="rol" class="form-control" required>
                 <option value="usuario" selected>Usuario</option>
+                <option value="usuario" selected>Admin</option>
                 <!-- Puedes agregar más roles según tus necesidades -->
                 </select>
                 </div>

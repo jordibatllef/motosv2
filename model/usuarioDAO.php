@@ -10,7 +10,7 @@ class UsuarioDao{
 
         $con = Database::connect();
 
-        $stmt = $con->prepare("SELECT * FROM usuarios");
+        $stmt = $con->prepare("SELECT * FROM usuario");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -28,7 +28,7 @@ class UsuarioDao{
     public static function getPasswordHash($email){
         $con = Database::connect();
 
-        $stmt = $con->prepare("SELECT password FROM usuarios WHERE email=?");
+        $stmt = $con->prepare("SELECT password FROM usuario WHERE email=?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -45,12 +45,12 @@ class UsuarioDao{
     public static function  getUserBymail($email){
         $con = Database::connect();
 
-        $stmt = $con->prepare("SELECT * FROM usuarios WHERE email=? ");
+        $stmt = $con->prepare("SELECT * FROM usuario WHERE email=? ");
         $stmt->bind_param("s",$email);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        $usuario = $result->fetch_object('Usuario');
+        $usuario = $result->fetch_object('usuario');
         $con->close();
 
         return $usuario;
@@ -58,11 +58,11 @@ class UsuarioDao{
     }
 
     //Función que añade un usuario de la base de datos
-    public static function add( $nombre, $apellidos, $email, $password_hash,$direccion,$rol){
+    public static function add( $nombre, $apellido, $email, $password_hash,$direccion,$rol){
         $con = Database::connect();
 
-        $stmt = $con->prepare("INSERT INTO usuarios (nombre,apellidos,email,password,direccion,rol) VALUES (?,?,?,?,?,?)");
-        $stmt->bind_param("ssssss" ,$nombre,$apellidos,$email,$password_hash,$direccion,$rol);
+        $stmt = $con->prepare("INSERT INTO usuario (nombre,apellido,email,password,direccion,rol) VALUES (?,?,?,?,?,?)");
+        $stmt->bind_param("ssssss" ,$nombre,$apellido,$email,$password_hash,$direccion,$rol);
         $stmt->execute();
 
         
@@ -71,11 +71,11 @@ class UsuarioDao{
     }
 
     //Función que elimina un usuario de la base de datos
-    public static function delete($idUsuarios){
+    public static function delete($idusuarios){
         $con = Database::connect();
 
-        $stmt = $con->prepare("DELETE FROM usuarios WHERE idUsuarios=?");
-        $stmt->bind_param("i" ,$idUsuarios);
+        $stmt = $con->prepare("DELETE FROM usuario WHERE idusuarios=?");
+        $stmt->bind_param("i" ,$idusuarios);
         $stmt->execute();
 
         $con->close();
@@ -85,8 +85,8 @@ class UsuarioDao{
     //Función para conseguir usuario por su Id
     public static function getUserById($idUsuarios){
         $con=Database::connect();
-        $stmt=$con->prepare("SELECT * FROM usuarios WHERE idUsuarios = ?");
-        $stmt->bind_param("i",$idUsuarios);
+        $stmt=$con->prepare("SELECT * FROM usuario WHERE idusuarios = ?");
+        $stmt->bind_param("i",$idusuarios);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -98,7 +98,7 @@ class UsuarioDao{
     }
 
     // Función para editar un usuario
-    public static function edit($id, $nombre, $apellidos, $email, $password, $direccion){
+    public static function edit($id, $nombre, $apellido, $email, $password, $direccion){
        $con = Database::connect();
 
        // Verificar si se proporcionó un nuevo password
@@ -107,12 +107,12 @@ class UsuarioDao{
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         // Actualizar el password en la base de datos solo si se proporcionó un nuevo password
-        $stmt = $con->prepare("UPDATE usuarios SET nombre = ?,  apellidos = ? , email = ?,  password = ?, direccion = ? WHERE idUsuarios = ?");
-        $stmt->bind_param("sssssi", $nombre, $apellidos, $email, $password_hash, $direccion, $id);
+        $stmt = $con->prepare("UPDATE usuarios SET nombre = ?,  apellido = ? , email = ?,  password = ?, direccion = ? WHERE idusuarios = ?");
+        $stmt->bind_param("sssssi", $nombre, $apellido, $email, $password_hash, $direccion, $id);
        } else {
         // No se proporcionó un nuevo password, actualizar sin cambiar el password
-        $stmt = $con->prepare("UPDATE usuarios SET nombre = ?,  apellidos = ? , email = ?, direccion = ? WHERE idUsuarios = ?");
-        $stmt->bind_param("ssssi", $nombre, $apellidos, $email, $direccion, $id);
+        $stmt = $con->prepare("UPDATE usuarios SET nombre = ?,  apellido = ? , email = ?, direccion = ? WHERE idusuarios = ?");
+        $stmt->bind_param("ssssi", $nombre, $apellido, $email, $direccion, $id);
        }
 
        $stmt->execute();
@@ -122,8 +122,8 @@ class UsuarioDao{
     //Función para verificar si existe ya ese email en la BBDD 
     public static function emailExists($email){
         $con = Database::connect();
-    
-        $stmt = $con->prepare("SELECT COUNT(*) as count FROM usuarios WHERE email=?");
+     
+        $stmt = $con->prepare("SELECT count(*) as count FROM usuario WHERE email=?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
