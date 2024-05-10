@@ -59,12 +59,13 @@ class UsuarioDao{
 
     //Función que añade un usuario de la base de datos
     public static function add( $nombre, $apellido, $email, $password_hash,$direccion,$rol){
+   
         $con = Database::connect();
-
+        echo $nombre;
         $stmt = $con->prepare("INSERT INTO usuario (nombre,apellido,email,password,direccion,rol) VALUES (?,?,?,?,?,?)");
         $stmt->bind_param("ssssss" ,$nombre,$apellido,$email,$password_hash,$direccion,$rol);
         $stmt->execute();
-
+       
         
         $con->close();
       
@@ -107,11 +108,11 @@ class UsuarioDao{
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         // Actualizar el password en la base de datos solo si se proporcionó un nuevo password
-        $stmt = $con->prepare("UPDATE usuarios SET nombre = ?,  apellido = ? , email = ?,  password = ?, direccion = ? WHERE idusuarios = ?");
+        $stmt = $con->prepare("UPDATE usuario SET nombre = ?,  apellido = ? , email = ?,  password = ?, direccion = ? WHERE idusuarios = ?");
         $stmt->bind_param("sssssi", $nombre, $apellido, $email, $password_hash, $direccion, $id);
        } else {
         // No se proporcionó un nuevo password, actualizar sin cambiar el password
-        $stmt = $con->prepare("UPDATE usuarios SET nombre = ?,  apellido = ? , email = ?, direccion = ? WHERE idusuarios = ?");
+        $stmt = $con->prepare("UPDATE usuario SET nombre = ?,  apellido = ? , email = ?, direccion = ? WHERE idusuarios = ?");
         $stmt->bind_param("ssssi", $nombre, $apellido, $email, $direccion, $id);
        }
 

@@ -10,7 +10,7 @@ class UserController {
         include 'views/usuario/iniciar_sesion.php';
     }
     public function addcesta() {
-        include 'views/cesta/cesta.php';
+        include 'views/carrito/cesta.php';
     }
 
 

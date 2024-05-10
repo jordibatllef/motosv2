@@ -10,7 +10,7 @@ class ComprasController{
         //$listaarticulos = ArticuloDAO::getAllArticulos();
         //$listaarticulos = [];
      
-        $view = 'views/cesta/ver_cesta.php';
+        $view = 'views/carrito/cesta.php';
         include_once 'views/main.php';
         
     }

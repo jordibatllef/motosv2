@@ -1,7 +1,7 @@
 <?php
 
 
-include_once 'model/usuarioDao.php';
+include_once 'model/usuarioDAO.php';
 
 class UsuarioController {
 
@@ -22,6 +22,7 @@ class UsuarioController {
 
     //funcion agregar usuario
     public function add(){
+        
         $nombre=$_POST['nombre'];
         $apellidos=$_POST['apellidos'];
         $email=$_POST['email'];
@@ -32,20 +33,20 @@ class UsuarioController {
         // Verificar si el correo electrónico ya existe en la base de datos
         if(UsuarioDAO::emailExists($email)) {
            // Si el correo electrónico ya existe, muestra un mensaje de alerta al usuario
-           echo '<script>alert("El correo electrónico ya está registrado. Por favor, intente con otro correo electrónico."); 
-           window.location.href = "?controller=Dashboard&action=addNuevoUsuario";</script>';
-           exit; // Detener la ejecución del script
+        echo '<script>alert("El correo electrónico ya está registrado. Por favor, intente con otro correo electrónico."); 
+        window.location.href = "?controller=Dashboard&action=addNuevoUsuario";</script>';
+        
+           //exit; // Detener la ejecución del script
         }
 
         //encripto password y lo guardo en nueva variable 
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        
+        $listaUsuarios=UsuarioDAO::getAllUsuarios();
         usuarioDAO::add($nombre,$apellidos,$email,$password_hash,$direccion,$rol);
-
         //Una vez registrado el nuevo usuario en la BBDD te redirigirá al método verifica login
         $this->verificaLogin($email,$password);
 
-        //header("Location:".url."?controller=Dashboard&action=addUsuario");
+        header("Location:".url."?controller=Dashboard&action=addUsuario");
     }
     
     //funcion dirige al area login
