@@ -50,9 +50,10 @@
 
                 <?php
 
+
                 // Inicio variable fuera del bucle
-                $total = 0;  
-                foreach ($_SESSION['cesta'] as $lineacarrito){
+                $total = 0;                  
+                foreach ($articulos_cesta as $lineacarrito){
                 $total += $lineacarrito["articulo"]->getPrecio() * $lineacarrito['cantidad'];
                 ?>
 
