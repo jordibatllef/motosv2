@@ -1,55 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bookhaven</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
 
-    
-  
-<div class="content-wrapper">
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard</h1>
-                </div>
-                <div class="col-sm-6">
-                    <a href="?controller=Dashboard&action=addarticle">Añadir Artículo</a>
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
-                    </ol>
+<?php include_once 'views/nav.php'; ?>
+<?php include_once 'views/header.php'; ?>
+
+
+<div class="text-center">
+    <hr>
+    <h2>PRODUCTOS</h2>
+    <hr>
+</div>
+
+
+<div class="container">
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4">
+        <?php foreach ($listaarticulos as $articulo) { ?>
+        <div class="col">
+            <div class="card h-100">
+                <img class="card-img-top fixed-image-size" src="img/<?= $articulo->getImg() ?>" alt="Card image cap">
+                <div class="card-body d-flex flex-column">
+                    <div class="mb-auto">
+                    <h5 class="text-dark text-uppercase">Nombre:</h5>
+                    <p class="card-title text-dark"><?= $articulo->getNombre() ?></p>
+                    </div>
+                    <div class="mb-auto" >
+                    <h5 class="text-dark text-uppercase">Descripción:</h5>
+                    <p class="card-text text-dark"><?= $articulo->getDescripcion() ?></p>
+                    </div>
+                    <div class="mb-auto">
+                    <h5 class="text-dark text-uppercase">Precio:</h5>
+                    <p class="card-text text-dark"><?= $articulo->getPrecio() ?> €</p>
+                    </div>
+                    <div class="mb-auto">
+                    <!-- Botón de ver producto -->
+                    <button class="btn btn-outline-success btn-outline-dark" type="button" onclick="location.href='?controller=Articulo&action=listProductoxId&id=<?= $articulo->getIdProductos() ?>'">Ver producto</button>
+                    </div>
+                    <pre></pre>
+                    <!-- Botón añadir al carrito -->
+                    <div class="mb-auto">
+                        <form method="post" action="?controller=Pedido&action=addCarrito">
+                            <h5 class="text-dark text-uppercase">Cantidad:</h5>
+                            <input type="number" name="cantidad" value="1" min="1" max="10">
+                            <input type="hidden" name="idProducto" value="<?= $articulo->getIdProductos() ?>">
+                            <?php if ($articulo->getStock() == 0) {
+                                echo '<p class="text-dark">Artículo no disponible</p>';
+                            } ?>
+                            <pre></pre>
+                            <button class="btn btn-outline-success btn-outline-dark" type="submit" name="accion" value="anadir" <?php if ($articulo->getStock() == 0) echo 'disabled'; ?>>Añadir al carrito</button>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <?php } ?>
     </div>
-
-    <section class="content">
-
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Img</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-            foreach ($listaarticulos as $articulo) {
-            ?>
-                <tr>
-                    <td><img class="" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></td>
-                    <td><?= $articulo->getNombre() ?></td>
-                    <td><?= $articulo->getDescripcion() ?></td>
-                    <td><?= $articulo->getPrecio() ?></td>
-                    
-                    <td>
-                        <i href="#"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#223658}</style><path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></i>
-                        <a href="?controller=Articulo&action=delete&id=<?= $articulo->getIdarticulo() ?>">borrar</a>
-                    </td>
-                </tr>
-
-            <?php } ?>
-
-            </tbody>
-        </table>
-    </section>
 </div>
+
+<?php include_once 'views/Testimonials.php'; ?>
+<?php include_once 'views/footer.php'; ?>
+
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    //carrusel
+    $('.carousel').carousel();
+</script>
+
+</body>
+</html>
