@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bookhaven</title>
+  <title>MOTOS JB</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/estilo.css">
@@ -66,7 +66,7 @@
     </div>
 </div>
 
-<?php include_once 'views/Testimonials.php'; ?>
+
 <?php include_once 'views/footer.php'; ?>
 
 <script src="plugins/jquery/jquery.min.js"></script>
