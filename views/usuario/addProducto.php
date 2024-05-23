@@ -41,16 +41,7 @@
                         <input type="number" name="stock" id="stock" class="form-control" placeholder="Stock" required>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="idCategoria" class="col-sm-2 col-form-label">Categoría:</label>
-                    <div class="col-sm-10">
-                        <select name="idCategoria" id="idCategoria" class="form-control" required>
-                            <?php foreach ($listacategorias as $cat ) {?>
-                                <option value="<?=$cat->getIdCategorias()?>"><?=$cat->getNombreCategoria()?></option>
-                            <?php }?>
-                        </select>
-                    </div>
-                </div>
+                
                 <div class="form-group row">
                     <label for="img" class="col-sm-2 col-form-label">Foto:</label>
                     <div class="col-sm-10">

@@ -36,8 +36,7 @@
         </nav>
 
         <?php include_once('sidebar.php') ?>
-        <?php include_once('views/usuario/addUsuario.php') ?>
-        <?php include_once('views/usuario/addProducto.php') ?>
+        <?php include_once($view) ?>
 
     </div>
 
@@ -45,7 +44,7 @@
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/e8a23d1527.js" crossorigin="anonymous"></script>
     <script src="dist/js/adminlte.js"></script>
-    'views/admin/dashboard.php';
+
 </body>
 
 </html>
