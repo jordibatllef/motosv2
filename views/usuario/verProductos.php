@@ -41,14 +41,12 @@
             <thead  class="thead-dark">
                 <tr>
                    
-                    <th>idProducto</th>
+                    <th>getIdarticulos</th>
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Descripción</th>
-                    <th>Stock</th>
                     <th>idcategoria</th>
                     <th>Imagen</th>
-                    <th>Acciones</th>
                     
                 </tr>
             </thead>
@@ -57,18 +55,18 @@
             foreach ($listaarticulos as $articulo) {
             ?>
                 <tr>
-                    <td><?= $articulo->getIdproductos() ?></td>
+                    <td><?= $articulo->getIdarticulos() ?></td>
                     <td><?= $articulo->getNombre() ?></td>
                     <td><?= $articulo->getPrecio() ?></td>
                     <td><?= $articulo->getDescripcion() ?></td>
-                    <td><?= $articulo->getStock() ?></td>
+                    <td><?= $articulo->getimage() ?></td>
                     <td><?= $articulo->getIdcategoria() ?></td>
                     <td><img class="" src="img/<?= $articulo->getImg() ?>" alt="Card image cap"></td>
-                    <td>  <a href="?controller=Articulo&action=delete&id=<?= $articulo->getIdproductos() ?>" class="nav-link">
+                    <td>  <a href="?controller=Articulo&action=delete&id=<?= $articulo->getIdarticulos() ?>" class="nav-link">
                             <i class="fa-solid fa-trash"></i>
                                 <p>Eliminar productos</p>
                             </a>
-                            <a href="?controller=Dashboard&action=editarProducto&id=<?= $articulo->getIdproductos() ?>" class="nav-link">
+                            <a href="?controller=Dashboard&action=editarProducto&id=<?= $articulo->getIdarticulos() ?>" class="nav-link">
                             <i class="fa-solid fa-pencil"></i>
                                 <p>Editar productos</p>
                             </a>

@@ -1,8 +1,10 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+include_once 'model/articuloDao.php';
+
+
+
 
 //include_once 'model/ArticuloDAO.php';
 
@@ -30,6 +32,7 @@ class ArticuloController{
         header("Location:".url."?controller=Dashboard&action=addarticle");
    
     }
+    
 
     public function edit(){
         echo '<h1>Crear Articulo</h1>';
@@ -50,3 +53,12 @@ class ArticuloController{
     }
 
 }
+
+
+
+
+
+
+
+
+

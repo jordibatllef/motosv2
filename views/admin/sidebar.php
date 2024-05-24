@@ -27,7 +27,7 @@
 
                         <li class="nav-header">USUARIOS</li>
                         <li class="nav-item">
-                            <a href="?controller=Dashboard&action=listUsuarios" class="nav-link">
+                            <a href="?controller=Dashboard&action=Articulo" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>Ver Usuarios</p>
                             </a>
