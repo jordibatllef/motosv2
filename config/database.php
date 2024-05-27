@@ -9,7 +9,7 @@
             die('Error en la base de datos');
 
         }else{
-            return $con;
+            return $con;jordi
         }
     }
 
