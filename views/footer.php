@@ -3,7 +3,7 @@
         <h3>Contacto</h3>
         <p>Argentona Carrer del Pi</p>
         <p>Email: jordi.jbf15@gmail.com</p>
-        <p>Teléfono: +34 628 519 620s</p>
+        <p>Teléfono: +34 628 519 620</p>
     </div>
 
     <div>
