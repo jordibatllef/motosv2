@@ -23,6 +23,8 @@ class DashboardController{
     }
 
 
+
+    //////////////  VER  USUARIO  //////////////
     public function showUsuario(){
         
         $view = 'views/usuario/verUsuarios.php';
@@ -37,7 +39,7 @@ class DashboardController{
     }
 
 
-    //////////////////////////////////////////////////////////
+    //////////////////////    PRODUCTOS      ////////////////////////////////////
 
 
     public function addProducto(){

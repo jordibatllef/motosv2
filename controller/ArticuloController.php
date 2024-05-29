@@ -52,6 +52,7 @@ class ArticuloController{
         echo '<h1>Datos Articulo</h1>';
     }
 
+
 }
 
 

@@ -5,6 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
+      
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           
@@ -46,9 +47,9 @@
     </div>
 
     <div class="header-buttons">
-        <a href="?controller=User&action=login">Iniciar Sesión</a>
-        <a href="?controller=usuario&action=register">Registrate</a>
-        <a href="?controller=Compras&action=list">Ver Cesta</a>
+        <a href="?controller=User&action=login">Iniciar Sessió</a>
+        <a href="?controller=usuario&action=register">Registrar-te</a>
+        <a href="?controller=Compras&action=list">Veure Cistella</a>
     </div>
 </header>
 
