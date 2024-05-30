@@ -41,3 +41,4 @@ class ArticuloDAO
         $con->close();
     }
 }
+

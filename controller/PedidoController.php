@@ -1,45 +1,191 @@
 <?php
-class PedidoController {
-    public function deleteProducto() {
+
+include_once 'model/articuloDao.php';
+include_once 'model/pedidoDao.php';
+include_once 'model/usuarioDao.php';
+
+class PedidoController{
+
+
+    //Función ver todos los pedidos desde admin
+    public function listPedidos(){
+
+        $listapedidos = PedidoDAO::getAllPedidos();
+    }
+
+    //Función ver pedidos por idUsuario
+    public function verPedidos(){
+       // Inicia sesión si no está iniciada
+       session_start();
+
+       // Verifica si hay un usuario 
+       if (isset($_SESSION['user'])) {
+          // Obtén el ID del usuario actual
+           $idUsuario = $_SESSION['user']->getIdUsuarios();
+
+           // Obtén el último pedido del usuario actual
+           $ultimoPedido = PedidoDAO::getUltimoPedidoByUserId($idUsuario);
+
+           // Verifica si se encontró un pedido
+           if ($ultimoPedido) {
+               // Incluye la vista para mostrar el último pedido
+               include_once 'views/Carrito/verPedido.php';
+           } else {
+               echo "No hay pedidos para mostrar.";
+           }
+       } else {
+           echo "No existe el usuario.";
+       }
+    }
+
+  
+    //Función añadir productos al carrito y guardar la cesta en variable sesion
+    public function addCarrito(){
+
+        $listacategorias = CategoriaDAO::getAllCategories();
+        
+        //recibo el id de un producto y la cantidad 
+        $id = $_POST['idProducto'];
+        $articulo = ArticuloDAO::getArticuloById($id);
+        
+        //inicio sesión
         session_start();
-        $idProducto = $_GET['idProducto'];
-        if (isset($_SESSION['carrito'][$idProducto])) {
-            unset($_SESSION['carrito'][$idProducto]);
+        
+        //si no existe la cesta la creo
+        if(!isset($_SESSION['cesta'])){
+            $_SESSION['cesta'] = array();
         }
-        header('Location: cesta.php');
+
+        // Añadir producto,cantidad,precio y precio total a la cesta
+        $_SESSION['cesta'][] = array(
+            'articulo' => $articulo,
+            'cantidad' => $_POST['cantidad'],
+            'precio' => $articulo->getPrecio(),
+            'total' => $articulo->getPrecio() * $_POST['cantidad'],
+        );
+
+        
+        $_SESSION['totalProductos'] = $this->calcularTotalProductosEnCesta(); 
+
+        
+
+        include_once 'views/Carrito/cesta.php';
+        
+
     }
 
-    public function addPedido() {
+      // Método para calcular el total de productos en la cesta  
+      private function calcularTotalProductosEnCesta() {
+        $totalProductos = 0;
+        if(isset($_SESSION['cesta'])) {
+            foreach ($_SESSION['cesta'] as $producto) {
+                $totalProductos += $producto['cantidad'];
+            }
+        }
+        return $totalProductos;
+    }
+
+    //Función añadir pedido a la BBDD
+    public function addPedido(){
+
+        $listacategorias = CategoriaDAO::getAllCategories();
+        //si existe una sesion cesta y usuario
         session_start();
-        include 'db.php';  // Archivo donde se establece la conexión a la base de datos
 
-        if (!isset($_SESSION['user'])) {
-            header('Location: ?controller=usuario&action=login');
-            exit;
-        }
+        //si existe la cesta y el usuario hago foreach para recoger total cesta
+        $total = 0;  
+        foreach ($_SESSION['cesta'] as $lineacarrito) {
+        $total += $lineacarrito["articulo"]->getPrecio() * $lineacarrito['cantidad'];
+        };
+        //paso a BBDD precio total cesta 
+        $precio_total = $total;
 
-        $idUsuario = $_SESSION['user']['id'];
-        $carrito = $_SESSION['carrito'];
+        //en la sesion tengo un usuario guardado necesito conseguir id y lo haré a través del método de la clase
+        $idUsuario=$_SESSION['user']->getIdUsuarios();
+        
+        //Declaro variable que me devolverá el metodo
+        $idPedidos = PedidoDAO::add($precio_total,$idUsuario);
+        // Envio a método id pedido 
+        $this->addDetPedido($idPedidos);
+        
+        // Obtén los pedidos asociados al ID del usuario actual
+        $listapedidos = PedidoDAO::getPedidosByUserId($idUsuario);
 
-        // Insertar el pedido
-        $query = "INSERT INTO pedidos (id_usuario, fecha) VALUES ('$idUsuario', NOW())";
-        $conn->query($query);
-        $idPedido = $conn->insert_id;
+        include_once 'views/Carrito/verPedido.php';
 
-        // Insertar los productos del pedido
-        foreach ($carrito as $idProducto => $cantidad) {
-            $query = "INSERT INTO detalle_pedido (id_pedido, id_articulo, cantidad) VALUES ('$idPedido', '$idProducto', '$cantidad')";
-            $conn->query($query);
-        }
-
-        // Vaciar el carrito
-        unset($_SESSION['carrito']);
-
-        header('Location: ?controller=Pedido&action=pedidoExitoso');
+         //una vez hecha la compra y añadido pedido a la BBDD borro la cesta
+         unset($_SESSION['cesta']);
+ 
+ 
     }
 
-    public function pedidoExitoso() {
-        include 'views/pedido_exitoso.php';
+    //Función eliminar productos de la cesta
+    public function deleteProducto(){
+       //si existe sesion cesta y recibo id del producto a eliminar
+        session_start();
+
+        //recibo id del producto a eliminar
+        $id = $_GET['idProducto'];
+        //recorro la cesta y si coincide con el id del producto lo borro
+        //$indice es xq linea carrito es una array
+        foreach ($_SESSION['cesta'] as $indice =>  $lineacarrito) {
+            if($lineacarrito['articulo']->getIdProductos() == $id){
+                unset($_SESSION['cesta'][$indice]);
+            }
+        
+        }
+        
+        // Recalcular el total de productos en la cesta después de eliminar el artículo
+    $totalProductos = $this->calcularTotalProductosEnCesta();
+
+    // Actualizar la variable en la sesión
+    $_SESSION['totalProductos'] = $totalProductos;
+
+    // Redirigir de nuevo a la página de la cesta
+    header("Location: ?controller=pedido&action=verCesta");
+           
+        
     }
+
+    //Función ver cesta
+    public function verCesta(){
+        session_start();
+        
+        //si existe la cesta
+        if(isset($_SESSION['cesta'])&& count($_SESSION['cesta'])>0){
+            //muestro la cesta
+            include_once 'views/Carrito/cesta.php';
+        }
+        else{
+            include_once 'views/Carrito/cestaVacia.php';
+            
+        }
+    }
+
+    //Función añadir detalle pedido a la BBDD
+    public function addDetPedido($idPedidos) {
+        
+        
+        // Verificar si existe la cesta en la sesión y si no está vacía
+        if(isset($_SESSION['cesta']) && !empty($_SESSION['cesta'])) {
+            // En cada bucle enviar datos a la BBDD
+            foreach ($_SESSION['cesta'] as $lineacarrito) {
+                $idProducto = $lineacarrito["articulo"]->getIdProductos();
+                $precio = $lineacarrito["articulo"]->getPrecio();
+                $cantidad = $lineacarrito["cantidad"];
+    
+                // Llamar al método addDetPedido del PedidoDAO para almacenar los detalles del pedido en la base de datos
+                PedidoDao::addDetPedido($idPedidos, $idProducto, $precio, $cantidad);
+                // Restar stock del producto una vez se ha finalizado pedido y se han guardado los datos en la BBDD
+                ArticuloDAO::restarStock($idProducto, $cantidad);
+
+            }
+        } else {
+
+            echo "La cesta está vacía.";
+        }
+    }
+
+   
+    
 }
-?>
